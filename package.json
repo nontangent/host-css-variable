@@ -1,0 +1,21 @@
+{
+  "name": "host-css-variable",
+  "version": "1.0.0",
+  "description": "This is a library that pseudo-encapsulates host CSS variables for component based architectures. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SCSS",
+    "CSS",
+    "VARIABLE",
+    "COMPONENT"
+  ],
+  "author": "Nozomu Miyamoto",
+  "license": "MIT",
+  "dependencies": {
+    "calc-loader": "^1.0.1",
+    "loader-utils": "^2.0.0"
+  }
+}
