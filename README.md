@@ -3,7 +3,7 @@ This is a library that pseudo-encapsulates host CSS variables for component base
 
 ## Install
 ```
-$ npm install host-css-variable
+$ npm i -D host-css-variable
 ```
 
 and add `host-css-variable/loader` to your `webpack.config.js`
