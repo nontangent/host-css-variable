@@ -42,8 +42,8 @@ $chars: ();
   }
 
   #{$variable}: $default;
-  // #{$host}#{trip-initial($variable)}: var(#{$variable});
-  #{$host}#{$variable}: var(#{$variable});
+  #{$host}#{trip-initial($variable)}: var(#{$variable});
+  // #{$host}#{$variable}: var(#{$variable});
 }
 
 @function host-variable($args...) {
