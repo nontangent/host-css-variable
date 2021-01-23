@@ -1,7 +1,10 @@
 # Host CSS Variable
-This is a library that pseudo-encapsulates host CSS variables for component based architectures.
+This package enable to host-scoped css variable(custom property) by using `hvar(--name)`.
 
-## Install
+## Setup
+
+Install host-css-variable to dev dependencies
+
 ```
 $ npm i -D host-css-variable
 ```
@@ -16,8 +19,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-					// Add 'host-css-variable/loader' after the SCSS Loaders.
-					{ loader: 'host-css-variable/loader' }
+          // Add 'host-css-variable/loader' after the SCSS Loaders.
+          { loader: 'host-css-variable/loader' }
         ],
       }
     ],
@@ -31,12 +34,14 @@ module.exports = {
 $host: host('child');
 
 :host {
-	@include host-variable($host, --width, 200px);
-	@include hvar($host, --height, 200px);
+  // Define host css variable and default value. It can be accessed in host scope.
+	@include hvar(--width, 200px);
+	@include hvar(--height, 100vh);
 }
 
 :host {
 	display: block;
+  // Using defined host css variable.
 	width: hvar(--width);
 	height: hvar(--height);
 }
@@ -49,7 +54,7 @@ $host: host('parent');
 
 :host {
 	@include hvar(--width, 1200px);
-	@include hvar(--height, 200px);
+	@include hvar(--height, 100vh);
 }
 
 :host {
@@ -64,5 +69,32 @@ $host: host('parent');
 }
 ```
 
-In this case, the width of the parent component is 1200px and the width of the child component is 600px.
+```grandparent.component.scss
+@import '~host-css-variable/host-variable';
+$host: host('grandparent');
 
+:host {
+	@include hvar(--width, 1920px);
+	@include hvar(--height, 100vh);
+}
+
+:host {
+	display: block
+	width: hvar(--width);
+	height: hvar(--height);
+
+	child {
+		--width: 1600px;
+		--height: hvar(--height);
+	}
+}
+```
+ 
+
+In this case, the width of components is following.
+
+|  components  |  width | height |
+|  :----       |  ----: |  ----: |
+|  grandparent | 1920px | 100vh  |
+|  parent      | 1600px | 100vh  |
+|  child       |  800px | 100vh  |
