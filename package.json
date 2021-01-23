@@ -3,6 +3,10 @@
   "version": "1.2.0",
   "description": "This is a library that pseudo-encapsulates host CSS variables for component based architectures. ",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:nontangent/host-css-variable.git"
+  },
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
@@ -12,7 +16,8 @@
     "SCSS",
     "CSS",
     "VARIABLE",
-    "COMPONENT"
+    "COMPONENT",
+    "CUSTOM PROPERTY"
   ],
   "author": "Nozomu Miyamoto",
   "license": "MIT",
