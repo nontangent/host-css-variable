@@ -16,7 +16,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-					// Add 'host-css-valiable/loader' under the SCSS Loaders 
+					// Add 'host-css-variable/loader' after the SCSS Loaders.
 					{ loader: 'host-css-variable/loader' }
         ],
       }
