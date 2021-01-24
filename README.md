@@ -1,7 +1,7 @@
 # Host CSS Variable
 This package enable to host-scoped css variable(custom property) by using `hvar(--name)`.
 
-## Setup
+## Installation
 
 Install host-css-variable to dev dependencies
 
@@ -28,25 +28,30 @@ module.exports = {
 }
 ```
 
-## Usage
+## Usage Example
+
+`child.component.scss`
+
 ```child.component.scss
 @import '~host-css-variable/host-variable';
 $host: host('child');
 
 :host {
   // Define host css variable and default value. It can be accessed in host scope.
-	@include hvar(--width, 200px);
-	@include hvar(--height, 100vh);
+  @include hvar(--width, 200px);
+  @include hvar(--height, 100vh);
 }
 
 :host {
 	display: block;
   // Using defined host css variable.
-	width: hvar(--width);
-	height: hvar(--height);
+  width: hvar(--width);
+  height: hvar(--height);
 }
 
 ```
+
+`parent.component.scss`
 
 ```parent.component.scss
 @import '~host-css-variable/host-variable';
@@ -69,6 +74,8 @@ $host: host('parent');
 }
 ```
 
+`grandparent.component.scss`
+
 ```grandparent.component.scss
 @import '~host-css-variable/host-variable';
 $host: host('grandparent');
@@ -83,7 +90,7 @@ $host: host('grandparent');
 	width: hvar(--width);
 	height: hvar(--height);
 
-	child {
+	parent {
 		--width: 1600px;
 		--height: hvar(--height);
 	}
