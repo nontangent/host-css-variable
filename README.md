@@ -43,7 +43,7 @@ $host: host('child');
 }
 
 :host {
-	display: block;
+  display: block;
   // Using defined host css variable.
   width: hvar(--width);
   height: hvar(--height);
@@ -58,19 +58,19 @@ $host: host('child');
 $host: host('parent');
 
 :host {
-	@include hvar(--width, 1200px);
-	@include hvar(--height, 100vh);
+  @include hvar(--width, 1200px);
+  @include hvar(--height, 100vh);
 }
 
 :host {
-	display: block
-	width: hvar(--width);
-	height: hvar(--height);
+  display: block
+  width: hvar(--width);
+  height: hvar(--height);
 
-	child {
-		--width: calc(hvar(--width) / 2);
-		--height: hvar(--height);
-	}
+  child {
+    --width: calc(hvar(--width) / 2);
+    --height: hvar(--height);
+  }
 }
 ```
 
@@ -81,19 +81,19 @@ $host: host('parent');
 $host: host('grandparent');
 
 :host {
-	@include hvar(--width, 1920px);
-	@include hvar(--height, 100vh);
+  @include hvar(--width, 1920px);
+  @include hvar(--height, 100vh);
 }
 
 :host {
-	display: block
-	width: hvar(--width);
-	height: hvar(--height);
+  display: block
+  width: hvar(--width);
+  height: hvar(--height);
 
-	parent {
-		--width: 1600px;
-		--height: hvar(--height);
-	}
+  parent {
+    --width: 1600px;
+    --height: hvar(--height);
+  }
 }
 ```
  
