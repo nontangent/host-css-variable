@@ -3,6 +3,10 @@ This package enable to host-scoped css variable(custom property) by using `hvar(
 
 ## Installation
 
+- Webpack
+- Angular
+
+### Webpack
 Install host-css-variable to dev dependencies
 
 ```
@@ -27,6 +31,16 @@ module.exports = {
   },
 }
 ```
+
+### Angular
+
+If you use Angular, you can setup by `ng add` command.
+
+```:.sh
+$ ng add angular-host-css-variable
+```
+
+Please read [angular-host-css-variable](https://www.npmjs.com/package/angular-host-css-variable).
 
 ## Usage Example
 
