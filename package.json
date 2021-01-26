@@ -1,6 +1,6 @@
 {
   "name": "host-css-variable",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "This is a library that pseudo-encapsulates host CSS variables for component based architectures. ",
   "main": "dist/index.js",
   "repository": {
